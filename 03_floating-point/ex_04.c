@@ -23,12 +23,12 @@ int main(void)
 
 	signal(SIGFPE, fpe_handler);
 
-	feenableexcept(FE_INVALID   | 
+	/* feenableexcept(FE_INVALID   | 
 				   FE_INEXACT   | 
                    FE_DIVBYZERO | 
                    FE_OVERFLOW  | 
                    FE_UNDERFLOW);
-                   
+    */               
 	ROUND_MODE = fegetround();
 	printf("Current Round Mode = %d \n", ROUND_MODE );
 	
