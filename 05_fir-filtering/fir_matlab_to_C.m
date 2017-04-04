@@ -28,7 +28,6 @@ signal = sin(2 * pi * Fn1 * t) + 0.5 * sin(2 * pi * Fn2 * t);
 % Input arguments must be in float
 
 input_f = single(signal);
-N = max(size(signal));
 
 output_c = fir_matlab_wrapper( input_f );
 
