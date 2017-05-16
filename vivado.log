@@ -1,0 +1,54 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue May  9 20:17:36 2017
+# Process ID: 17051
+# Current directory: /home/rodralez/my/docencia/control/github
+# Command line: vivado
+# Log file: /home/rodralez/my/docencia/control/github/vivado.log
+# Journal file: /home/rodralez/my/docencia/control/github/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/rodralez/my/investigacion/proyectos/2015_NAVEGO/vivado/zedboard_oled/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/rodralez/my/investigacion/proyectos/2015_NAVEGO/vivado/zedboard_oled/tamu.edu_user_ZedboardOLED_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:18 . Memory (MB): peak = 5879.555 ; gain = 139.359 ; free physical = 1897 ; free virtual = 9750
+update_compile_order -fileset sources_1
+launch_sdk -workspace /home/rodralez/my/investigacion/proyectos/2015_NAVEGO/vivado/zedboard_oled/project_1/project_1.sdk -hwspec /home/rodralez/my/investigacion/proyectos/2015_NAVEGO/vivado/zedboard_oled/project_1/project_1.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/rodralez/my/investigacion/proyectos/2015_NAVEGO/vivado/zedboard_oled/project_1/project_1.sdk -hwspec /home/rodralez/my/investigacion/proyectos/2015_NAVEGO/vivado/zedboard_oled/project_1/project_1.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ClassCastException (See /home/rodralez/my/docencia/control/github/vivado_pid17051.debug)
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May  9 20:59:38 2017...
