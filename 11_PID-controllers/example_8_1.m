@@ -6,6 +6,7 @@ close all
 s = tf('s');
 
 %% DATOS DEFINIDOS EN OGATA
+
 KCR = 30;
 PCR = 2.8099;
 

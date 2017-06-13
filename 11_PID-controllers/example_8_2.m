@@ -54,17 +54,3 @@ G = (Gc * Gp) / (1 + Gc*Gp);
 figure
 step(G,t)
 grid % See Figure 8–20
-
-% If you wish to plot the response with the smallest overshoot that is
-% greater than 0%, then enter the following values of 'K' and 'a'
-
-K = sortsolution(11,1)
-a = sortsolution(11,2)
-
-Gc = tf(K*[1 2*a a^2], [1 0]);
-G = Gc*Gp/(1 + Gc*Gp);
-figure
-step(G,t)
-grid % See Figure 8–21
-
-
