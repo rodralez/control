@@ -10,11 +10,11 @@ void test_rounding (void)
   float fp1, fp2;
 
  fp1 = exp(1.1);
- printf(" exp(1.1) = %0.8f\n", fp1);
+ printf(" exp(1.1) = %+0.8f\n", fp1);
  
  fp2 = -exp(1.1);
  
-  printf("-exp(1.1) = %0.8f\n", fp2);
+  printf("-exp(1.1) = %+0.8f\n", fp2);
 
 }
 
@@ -33,10 +33,16 @@ void change_rounding (int rounding_mode)
 
 int main(void)
 {	
-	printf("** Floating point constants ** \n");
+	printf("** Floating-point single-precision constants ** \n");
 	printf("FLT_MIN 	= %E \n", 	FLT_MIN );
 	printf("FLT_MAX 	= %E \n", 	FLT_MAX );
-	printf("FLT_EPSILON	= %E \n", 	FLT_EPSILON );
+	printf("FLT_EPSILON	= %E \n", 	FLT_EPSILON ); \\ En MATLAB: eps(single(1))
+	printf("\n");
+	
+		printf("** Floating-point double-precision constants ** \n");
+	printf("DBL_MIN 	= %E \n", 	DBL_MIN );
+	printf("DBL_MAX 	= %E \n", 	DBL_MAX );
+	printf("DBL_EPSILON	= %E \n", 	DBL_EPSILON ); \\ En MATLAB: eps(single(1))
 	printf("\n");
 
 	printf("** Floating point rounding modes ** \n");

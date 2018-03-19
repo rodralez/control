@@ -1,50 +1,69 @@
 #include <stdio.h>
 #include <float.h>
 #include <math.h>
-#define _GNU_SOURCE 1
-#include <fenv.h>
 #include <signal.h>
 #include <stdlib.h>
-     
-void fpe_handler(int sig){
-	
-	if (sig != SIGFPE)
-		return;
-	
-	printf ("UPS! Floating Point Exception \n");
-	
-	// exit(EXIT_FAILURE);
-}
 
+#define _GNU_SOURCE 1
+#define _ISOC99_SOURCE
+#include <fenv.h>
+
+void show_fe_exceptions(void)
+{
+	int raised;
+	
+    printf("Current exceptions raised: ");
+    
+    raised = fetestexcept (FE_DIVBYZERO);
+    if(raised & FE_DIVBYZERO)     printf("FE_DIVBYZERO");
+    
+    raised = fetestexcept (FE_INEXACT);
+    if(raised & FE_INEXACT)       printf("FE_INEXACT");
+    
+    raised = fetestexcept (FE_INVALID);
+    if(raised & FE_INVALID)       printf("FE_INVALID");
+    
+    raised = fetestexcept (FE_OVERFLOW);
+    if(raised & FE_OVERFLOW)      printf("FE_OVERFLOW");
+    
+    raised = fetestexcept (FE_UNDERFLOW);
+    if(raised & FE_UNDERFLOW)     printf("FE_UNDERFLOW");
+    
+    raised = fetestexcept (FE_ALL_EXCEPT);
+    if( (raised & FE_ALL_EXCEPT) == 0) printf("None exceptions");
+    
+    printf("\n");
+}
+     
 int main(void)
 {	
-	float a, b, c, d, e, f;
 	int ROUND_MODE;
-
-	signal(SIGFPE, fpe_handler);
-
-	/* feenableexcept(FE_INVALID   | 
-				   FE_INEXACT   | 
-                   FE_DIVBYZERO | 
-                   FE_OVERFLOW  | 
-                   FE_UNDERFLOW);
-    */               
-	ROUND_MODE = fegetround();
+	
+	ROUND_MODE = fegetround();		
 	printf("Current Round Mode = %d \n", ROUND_MODE );
-	
-	a = 0.0 / 0.0;
-	b = 1.0 / 0.0;
-	c = b / b;
-	d = a + 1;
-	e = b + 1;
-	f = a + b;
-	
-	printf ("a = 0.0 / 0.0 = %f \n", a);
-	printf ("b = 1.0 / 0.0 = %f \n", b);
-	printf ("c = b / b = %f \n", c);
-	printf ("d = a + 1 = %f \n", d);
-	printf ("e = b + 1 = %f \n", e);
-	printf ("f = a + b = %f \n", f);
-	
-	exit(EXIT_SUCCESS);
+		
+    show_fe_exceptions();
+      
+    /* Temporarily raise other exceptions */
+    feclearexcept(FE_ALL_EXCEPT);
+    feraiseexcept(FE_INEXACT);
+    show_fe_exceptions();
+    
+    feclearexcept(FE_ALL_EXCEPT);
+    feraiseexcept(FE_INVALID);
+    show_fe_exceptions();
+
+    feclearexcept(FE_ALL_EXCEPT);    
+    feraiseexcept(FE_DIVBYZERO);
+    show_fe_exceptions();
+
+    feclearexcept(FE_ALL_EXCEPT);
+    feraiseexcept(FE_OVERFLOW);
+    show_fe_exceptions();
+
+    feclearexcept(FE_ALL_EXCEPT);
+    feraiseexcept(FE_UNDERFLOW);
+    show_fe_exceptions();
+
+	return 0;	
 }
