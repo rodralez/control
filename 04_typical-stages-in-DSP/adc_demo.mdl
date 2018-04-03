@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.37"
+    ComputedModelVersion    "1.42"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [2133.0, 155.0, 1007.0, 634.0]
+      Location		      [1975.0, 96.0, 979.0, 634.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[951.0, 439.0]
-	ZoomFactor		[1.25]
-	Offset			[321.16717962333496, 345.26009291402937]
+	Extents			[923.0, 439.0]
+	ZoomFactor		[1.0]
+	Offset			[278.96717962333497, 315.46009291402936]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "rodralez"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 23 12:57:00 2018"
-  RTWModifiedTimeStamp	  443706554
-  ModelVersionFormat	  "1.%<AutoIncrement:37>"
+  LastModifiedDate	  "Tue Mar 27 12:16:18 2018"
+  RTWModifiedTimeStamp	  444053670
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -787,19 +787,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
       BlockType		      Gain
       Gain		      "1"
       Multiplication	      "Element-wise(K.*u)"
@@ -864,7 +851,7 @@ Model {
   }
   System {
     Name		    "adc_demo"
-    Location		    [2133, 155, 3140, 789]
+    Location		    [1975, 96, 2954, 730]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -876,45 +863,25 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "28"
+    SIDHighWatermark	    "30"
     Block {
       BlockType		      Gain
       Name		      "ADC output"
       SID		      "25"
       Position		      [680, 419, 750, 491]
       ZOrder		      15
-      Gain		      "2^-19 * 2.5"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Add"
-      SID		      "26"
-      Ports		      [2, 1]
-      Position		      [440, 437, 470, 468]
-      ZOrder		      16
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "27"
-      Position		      [345, 510, 375, 540]
-      ZOrder		      17
-      Value		      "2.5"
     }
     Block {
       BlockType		      Reference
       Name		      "Idealized ADC quantizer"
       SID		      "5"
       Ports		      [1, 1]
-      Position		      [530, 417, 615, 493]
+      Position		      [505, 417, 590, 493]
       ZOrder		      4
       BackgroundColor	      "orange"
       AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
@@ -922,10 +889,10 @@ Model {
       SourceBlock	      "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
       SourceType	      "IdealADC"
       ContentPreviewEnabled   off
-      NumberOfConverterBits   "20"
+      NumberOfConverterBits   "16"
       Vmin		      "0"
       Vmax		      "5"
-      OutputDataType	      "int32"
+      OutputDataType	      "int16"
       OutputNegativeValues    on
     }
     Block {
@@ -949,9 +916,10 @@ Model {
       ZOrder		      5
       BackgroundColor	      "green"
       Floating		      off
-      Location		      [3130, 165, 3836, 1021]
-      Open		      on
+      Location		      [2219, 106, 2925, 762]
+      Open		      off
       NumInputPorts	      "3"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -969,8 +937,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      " 0.8735     0.90997     0.12677    0.029206\n 0.7823     0.60295     0.16926    0.029206\n"
-      "0.88229     0.29593     0.21884    0.029206"
+      LegendLocations	      "0.82188     0.90663     0.12677     0.03811\n0.77939     0.60175     0.16926     0.03811\n"
+      "0.72982     0.29535     0.21884     0.03811"
       TimeRange		      "0.5"
       YMin		      "-5~-5~-5"
       YMax		      "5~5~5"
@@ -983,7 +951,7 @@ Model {
       Name		      "Signal"
       SID		      "1"
       Ports		      [0, 1]
-      Position		      [335, 442, 385, 478]
+      Position		      [300, 442, 350, 478]
       ZOrder		      -1
       BackgroundColor	      "lightBlue"
       Amplitude		      "2.5"
@@ -998,54 +966,11 @@ Model {
       DstPort		      3
     }
     Line {
-      ZOrder		      88
-      SrcBlock		      "Signal"
-      SrcPort		      1
-      Points		      [5, 0; 0, -5; 13, 0]
-      Branch {
-	ZOrder			135
-	Points			[7, 0]
-	Branch {
-	  ZOrder		  134
-	  Points		  [0, 70]
-	  DstBlock		  "Quantization error"
-	  DstPort		  2
-	}
-	Branch {
-	  ZOrder		  126
-	  Points		  [0, -10]
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-      }
-      Branch {
-	ZOrder			127
-	Points			[0, -65]
-	DstBlock		"Scope"
-	DstPort			1
-      }
-    }
-    Line {
       ZOrder		      41
       SrcBlock		      "Idealized ADC quantizer"
       SrcPort		      1
       DstBlock		      "ADC output"
       DstPort		      1
-    }
-    Line {
-      ZOrder		      125
-      SrcBlock		      "Add"
-      SrcPort		      1
-      DstBlock		      "Idealized ADC quantizer"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      128
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      Points		      [25, 0; 0, -65]
-      DstBlock		      "Add"
-      DstPort		      2
     }
     Line {
       ZOrder		      106
@@ -1061,6 +986,33 @@ Model {
       Branch {
 	ZOrder			137
 	DstBlock		"Scope"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      151
+      SrcBlock		      "Signal"
+      SrcPort		      1
+      Points		      [27, 0]
+      Branch {
+	ZOrder			163
+	Points			[0, -5]
+	Branch {
+	  ZOrder		  162
+	  DstBlock		  "Idealized ADC quantizer"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  160
+	  Points		  [0, -65]
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			161
+	Points			[0, 65]
+	DstBlock		"Quantization error"
 	DstPort			2
       }
     }
