@@ -5,11 +5,9 @@ clear
 %% PARAMETERS
 
 Fn = 100;   % Signal frequency
-Fs = 50000;  % Sampling frequency
+Fs = 5000;  % Sampling frequency
 SNR = 20;   % Signal-to-noise ratio
-N = 50;     % MA order
-
-%%
+N = 10;     % MA order
 
 dt = 1/Fs;
 t = (0:dt:1)';
@@ -22,7 +20,8 @@ signal_w = [t, signal];
 
 sim('fir_ma_example_sim');
 
-plot(t(N/2+1:end), signal_n_sim(1:end-N/2), 'g')
+plot(t, signal_n_sim, 'g')
+% plot(t(N/2+1:end), signal_n_sim(1:end-N/2), 'g')
 hold on 
 plot (t,signal_sim, 'b') 
 plot (t,signal_ma_sim, 'r') 

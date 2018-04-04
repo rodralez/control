@@ -11,6 +11,9 @@
  * Filter Length     : 51
  * Stable            : Yes
  * Linear Phase      : Yes (Type 1)
+ * Type              : Passband from 330 Hz to 3400 Hz.
+ * Fs                : 10,000 Hz
+ * Window            : Kaiser, beta = 7.5
  */
 
 /* General type conversion for MATLAB generated C-code  */
