@@ -12,8 +12,8 @@ clear
 
 %% PARAMETERS
 
-Fn1 = 500;   % Signal 1 frequency
-Fn2 = 60;   % Signal 1 frequency
+Fn1 = 1000;   % Signal 1 frequency
+Fn2 = 60;   % Signal 2 frequency
 Fs = 10000;  % Sampling frequency
 
 %%
@@ -21,7 +21,7 @@ Fs = 10000;  % Sampling frequency
 dt = 1/Fs;
 t = (0:dt:pi)';
 
-signal = sin(2 * pi * Fn1 * t) + 0.5 * sin(2 * pi * Fn2 * t); 
+signal = sin(2 * pi * Fn1 * t) + 0.25 * sin(2 * pi * Fn2 * t); 
 
 %% MATLAB-to-C, SINGLE PRECISION
 
@@ -39,5 +39,5 @@ output_c = fir_matlab_wrapper( input_f );
 figure
 plot(t, input_f, '--b')
 hold on
-plot(t, output_c, '-g')
+plot(t, output_c, '-r')
 

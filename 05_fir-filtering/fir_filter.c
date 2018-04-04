@@ -26,7 +26,7 @@ void fir_filter_float(float *input, uint32_t N, float *output)
 	}
 }
 
-void fir_filter_fixed(float *input, uint32_t N, float *output)
+void fir_filter_fixed(int16_t *input, uint32_t N, int16_t *output)
 {
 	uint32_t i;
 
