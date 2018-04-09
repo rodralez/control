@@ -10,10 +10,10 @@
  *  OUTPUT
  *      output : NX1 output (filtered) vector.
  *
- * Version: 001
- * Date:    2016/11/10
+ * Version: 002
+ * Date:    2018/04/09
  * Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
- * URL:     https://github.com/rodralez/td3
+ * URL:     https://github.com/rodralez/control
  *
  * ===================================================================== */
 

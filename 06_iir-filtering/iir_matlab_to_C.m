@@ -1,10 +1,10 @@
 % iir_matlab_to_C: script to compare IIR filters implemented in C and MATLAB 
 % languages.
 %
-% Version: 001
-% Date:    2016/11/10
+% Version: 002
+% Date:    2018/04/09
 % Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
-% URL:     https://github.com/rodralez/td3
+% URL:     https://github.com/rodralez/control
 
 clc
 clear
@@ -27,7 +27,7 @@ x1 = sin (2 * pi * Fn1 * t);
 Fn2 = 10000;              % Signal freq.
 x2 = sin (2 * pi * Fn2 * t);
 
-signal = x1 + 0.5 * x2;
+signal = x1 + 0.25 * x2;
  
 %% NOISE
 
@@ -65,6 +65,6 @@ plot(t, signal_f, 'b')
 hold on
 plot(t, output_c, 'r')
 hold on
-plot(t, output_m, 'm')
+plot(t, output_m, 'g')
 hold off
 legend('ORIGINAL SIGNAL', 'NOISY SIGNAL', 'C-FUNCION OUTPUT', 'MATLAB OUTPUT')

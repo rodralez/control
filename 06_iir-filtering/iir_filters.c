@@ -4,10 +4,10 @@
  * Functions inspired in IIR_filters_fourth_order.c (v 1.00) by Richard 
  * Sikora from Texas Instruments.
  * 
- * Version: 001
- * Date:    2016/11/10
+ * Version: 002
+ * Date:    2018/04/09
  * Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
- * URL:     https://github.com/rodralez/td3
+ * URL:     https://github.com/rodralez/control
  *
  * ================================================================== */
  
@@ -43,7 +43,7 @@
 #define A1 4
 #define A2 5
 
-/* #define DEBUG */
+// #define DEBUG 
 
 /*****************************************************************************/
 /* iir_filter_I_float()                                                      */
@@ -138,7 +138,7 @@ float second_order_IIR_direct_form_I_float(const float input, const float * coef
     
     y[0] = temp * gain[1];
     
-    /* Shuffle values along one place for next time */
+    /* Shuffle values along one place for next execution */
     
     y[2] = y[1];   /* y(n-2) = y(n-1) */
     y[1] = y[0];   /* y(n-1) = y(n)   */
@@ -153,20 +153,20 @@ float second_order_IIR_direct_form_I_float(const float input, const float * coef
 /* Fixed-point version                                                       */
 /*****************************************************************************/
 
-signed int second_order_IIR_direct_form_I( const signed int * coefficients, signed int input)
+signed int second_order_IIR_direct_form_I_fixed(const signed int * coefficients, signed int input)
 {
     long temp;
-    static signed int x[3] = { 0, 0, 0 };  /* x(n), x(n-1), x(n-2). Must be static */
-    static signed int y[3] = { 0, 0, 0 };  /* y(n), y(n-1), y(n-2). Must be static */
+    static signed int x[3] = { 0 };  /* x(n), x(n-1), x(n-2). Must be static */
+    static signed int y[3] = { 0 };  /* y(n), y(n-1), y(n-2). Must be static */
     
     x[0] = input; /* Copy input to x[0] */
     
     temp =  ( (long) coefficients[B0] * x[0]) ;   /* B0 * x(n)     */
     temp += ( (long) coefficients[B1] * x[1]);    /* B1/2 * x(n-1) */
-    //temp += ( (long) coefficients[B1] * x[1]);    /* B1/2 * x(n-1) */
+    temp += ( (long) coefficients[B1] * x[1]);    /* B1/2 * x(n-1) */
     temp += ( (long) coefficients[B2] * x[2]);    /* B2 * x(n-2)   */
     temp -= ( (long) coefficients[A1] * y[1]);    /* A1/2 * y(n-1) */
-    //temp -= ( (long) coefficients[A1] * y[1]);    /* A1/2 * y(n-1) */
+    temp -= ( (long) coefficients[A1] * y[1]);    /* A1/2 * y(n-1) */
     temp -= ( (long) coefficients[A2] * y[2]);    /* A2 * y(n-2)   */
     
     /* Divide temp by coefficients[A0] to remove fractional part */
@@ -174,7 +174,7 @@ signed int second_order_IIR_direct_form_I( const signed int * coefficients, sign
     
     y[0] = (short int) ( temp );
     
-    /* Shuffle values along one place for next time */
+    /* Shuffle values along one place for next execution */
     
     y[2] = y[1];   /* y(n-2) = y(n-1) */
     y[1] = y[0];   /* y(n-1) = y(n)   */
@@ -236,7 +236,7 @@ float second_order_IIR_direct_form_II_float ( const float input, const float * c
 /* Fixed-point version                                                       */
 /*****************************************************************************/
 
-signed int second_order_IIR_direct_form_II ( const signed int * coefficients, signed int input)
+signed int second_order_IIR_direct_form_II_fixed ( const signed int * coefficients, signed int input)
 {
     long temp;
     static short int delay[3] = { 0 };
