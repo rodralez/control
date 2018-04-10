@@ -10,10 +10,10 @@
  *  OUTPUT
  *      output : NX1 output (filtered) vector.
  *
- * Version: 002
- * Date:    2018/04/09
+ * Version: 001
+ * Date:    2016/11/10
  * Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
- * URL:     https://github.com/rodralez/control
+ * URL:     https://github.com/rodralez/td3
  *
  * ===================================================================== */
 
@@ -84,9 +84,9 @@ void mexFunction( int nlhs, mxArray *plhs[],
     }
     
     /* check that number of colums in input coefficients argument is 1 */
-    if(mxGetN(prhs[1])!=1) {
-        mexErrMsgIdAndTxt("MyToolbox:iir_matlab_wrapper:notColumnVector","Input coefficients must be a column vector.");
-    }
+//     if(mxGetN(prhs[1])!=1) {
+//         mexErrMsgIdAndTxt("MyToolbox:iir_matlab_wrapper:notColumnVector","Input coefficients must be a column vector.");
+//     }
     
         /* check that number of colums in input gain argument is 1 */
     if(mxGetN(prhs[2])!=1) {
@@ -113,7 +113,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
     output = mxGetData(plhs[0]);
 
     /* call the computational C routine */
-    iir_filter_I_float(input, coeff, gain, N, output);   
-    // iir_filter_II_float(input, coeff, gain, N, output);    
+     iir_filter_I_float(input, coeff, gain, N, output);   
+    //iir_filter_II_float(input, coeff, gain, N, output);    
     
 }

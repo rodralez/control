@@ -2,7 +2,7 @@
 % languages.
 %
 % Version: 002
-% Date:    2018/04/09
+% Date:    2018/04/10
 % Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
 % URL:     https://github.com/rodralez/control
 
@@ -27,7 +27,7 @@ x1 = sin (2 * pi * Fn1 * t);
 Fn2 = 10000;              % Signal freq.
 x2 = sin (2 * pi * Fn2 * t);
 
-signal = x1 + 0.25 * x2;
+signal = x1 + 0.1 * x2;
  
 %% NOISE
 
@@ -37,7 +37,7 @@ signal_n = my_noise (signal, SNR);
 
 %% IIR
 
-Hd = iir_elliptic_3400_44100;
+Hd = iir_elliptic_3400_44100_c;
 
 %% MATLAB-to-C, SINGLE PRECISION
 
@@ -59,12 +59,10 @@ output_m = filtfilt(SOS, G, signal_n);
 %% PLOT
 
 figure
-plot(t, x1, '--k')
+plot(t, signal, '--k')
 hold on
 plot(t, signal_f, 'b')
-hold on
 plot(t, output_c, 'r')
-hold on
 plot(t, output_m, 'g')
 hold off
 legend('ORIGINAL SIGNAL', 'NOISY SIGNAL', 'C-FUNCION OUTPUT', 'MATLAB OUTPUT')

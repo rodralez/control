@@ -4,10 +4,10 @@
  * Functions inspired in IIR_filters_fourth_order.c (v 1.00) by Richard 
  * Sikora from Texas Instruments.
  * 
- * Version: 002
- * Date:    2018/04/09
+ * Version: 001
+ * Date:    2016/11/10
  * Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
- * URL:     https://github.com/rodralez/control
+ * URL:     https://github.com/rodralez/td3
  *
  * ================================================================== */
  
@@ -107,8 +107,8 @@ void iir_filter_II_float(const float * input, const float * coeff,  const float 
 float second_order_IIR_direct_form_I_float(const float input, const float * coeff, const float * gain)
 {
     float temp;
-    static float x[3] = { 0 };  /* x(n), x(n-1), x(n-2). Must be static */
-    static float y[3] = { 0 };  /* y(n), y(n-1), y(n-2). Must be static */
+    static float x[3] = { 0.0 };  /* x(n), x(n-1), x(n-2). Must be static */
+    static float y[3] = { 0.0 };  /* y(n), y(n-1), y(n-2). Must be static */
     
 #ifdef  DEBUG
     unsigned int i;
@@ -202,7 +202,7 @@ signed int second_order_IIR_direct_form_I_fixed(const signed int * coefficients,
 float second_order_IIR_direct_form_II_float ( const float input, const float * coeff, const float * gain)
 {
     float temp;
-    static float delay[3] = { 0 };
+    static float delay[3] = { 0.0 };
     
     /* Copy input to temp for temporary storage */
     temp = input * gain[0];
@@ -224,10 +224,10 @@ float second_order_IIR_direct_form_II_float ( const float input, const float * c
     temp += (coeff[B1] * delay[1] ) ;  /* B1 */
     
     temp += (coeff[B2] * delay[2] ) ;
-    
-    delay[1] = delay[0];
+
     delay[2] = delay[1];
-    
+    delay[1] = delay[0];
+
     /* Temp will be fed into input of filter next time through */
     return ( temp * gain[1] );
 }
