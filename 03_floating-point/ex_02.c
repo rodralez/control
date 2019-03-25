@@ -39,21 +39,21 @@ void change_rounding (int rounding_mode)
 int main(void)
 {	
 	printf("** Floating-point single-precision constants ** \n");
-	printf("FLT_MIN 	= %E \n", 	FLT_MIN );
-	printf("FLT_MAX 	= %E \n", 	FLT_MAX );
+	printf("FLT_MIN 	= %E \n", 		FLT_MIN );
+	printf("FLT_MAX 	= %E \n", 		FLT_MAX );
 	printf("FLT_EPSILON	= %E \n", 	FLT_EPSILON ); // En MATLAB: eps(single(1))
 	printf("\n");
 	
 		printf("** Floating-point double-precision constants ** \n");
-	printf("DBL_MIN 	= %E \n", 	DBL_MIN );
-	printf("DBL_MAX 	= %E \n", 	DBL_MAX );
+	printf("DBL_MIN 	= %E \n", 		DBL_MIN );
+	printf("DBL_MAX 	= %E \n", 		DBL_MAX );
 	printf("DBL_EPSILON	= %E \n", 	DBL_EPSILON ); // En MATLAB: eps(1)
 	printf("\n");
 
 	printf("** Floating point rounding modes ** \n");
 	printf("Rounding Mode FE_TONEAREST	= %d \n", 	FE_TONEAREST );
-	printf("Rounding Mode FE_DOWNWARD	= %d \n", 	FE_DOWNWARD );
-	printf("Rounding Mode FE_UPWARD		= %d \n", 	FE_UPWARD );
+	printf("Rounding Mode FE_DOWNWARD	= %d \n", 		FE_DOWNWARD );
+	printf("Rounding Mode FE_UPWARD		= %d \n", 		FE_UPWARD );
 	printf("Rounding Mode FE_TOWARDZERO	= %d \n", 	FE_TOWARDZERO );
 	printf("\n");
 	
@@ -66,5 +66,14 @@ int main(void)
 	test_rounding();
 	printf("\n");
 	
+	change_rounding(FE_UPWARD);
+	current_rounding();
+	test_rounding();
+	printf("\n");
+
+	change_rounding(FE_TOWARDZERO);
+	current_rounding();
+	test_rounding();
+	printf("\n");
 	return 0;
 }
