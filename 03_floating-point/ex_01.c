@@ -28,17 +28,17 @@ int main(void)
 	double acum_1, acum_2;
 	
 	acum_1 = 0.0;
-	for (int i = 0; i < 10000000; i++){ acum_1 += 0.01; } 
+	for (int64_t i = 0; i < 10000000; i++){ acum_1 += 0.01; } 
 
 	acum_2 = 0.0;
-	b = 0.333;
-	for (int i = 0; i < 10000000; i++){ acum_2 += b / b; }
+	b = 0.01;
+	for (int64_t i = 0; i < 10000000; i++){ acum_2 += b / b; }
 	
-	printf("acum_1 = %.20lf \n", acum_1 );
-	printf("acum_2 = %.20lf \n", acum_2 );
+	printf("acum_1 = %f \n", acum_1 );
+	printf("acum_2 = %f \n", acum_2 );
 	
-	printf("Error en acum_1 = %.20lf \n", acum_1 - (10000000 * 0.01));
-	printf("Error en acum_2 = %.20lf \n", acum_2 - (10000000));
+	printf("Error en acum_1 = %.20lf \n", acum_1 - (10000000.0 * 0.01));
+	printf("Error en acum_2 = %.20lf \n", acum_2 - (10000000.0));
 	
 	return 0;
 }
