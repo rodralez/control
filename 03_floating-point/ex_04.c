@@ -4,6 +4,8 @@
 #include <signal.h>
 #include <stdlib.h>
 
+// compile: gcc -Wall -O3 -std=c99 ex_04.c -o ex_04 -lm -march=corei7 -frounding-math -fsignaling-nans
+
 #define _GNU_SOURCE 1
 #define _ISOC99_SOURCE
 #include <fenv.h>
