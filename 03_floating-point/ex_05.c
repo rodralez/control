@@ -33,16 +33,16 @@ int main(void)
 	
 	feclearexcept (FE_ALL_EXCEPT);
 	
-	//~ signal(SIGFPE, fpe_handler);
+	// signal(SIGFPE, fpe_handler);
 
-	//~ feenableexcept(FE_INVALID   | 
-				   //~ FE_INEXACT   | 
-                   //~ FE_DIVBYZERO | 
-                   //~ FE_OVERFLOW  | 
-                   //~ FE_UNDERFLOW);
+	// feenableexcept(FE_INVALID   | 
+		   // FE_INEXACT   | 
+                   // FE_DIVBYZERO | 
+                   // FE_OVERFLOW  | 
+                   // FE_UNDERFLOW);
 	                 
-	ROUND_MODE = fegetround();		
-	printf("Current Round Mode = %d \n", ROUND_MODE );
+    ROUND_MODE = fegetround();		
+    printf("Current Round Mode = %d \n", ROUND_MODE );
 		
     /* Temporarily raise other exceptions. */
     feclearexcept(FE_ALL_EXCEPT);
