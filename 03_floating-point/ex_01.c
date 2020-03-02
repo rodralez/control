@@ -3,6 +3,8 @@
 #include <math.h>
 #include <fenv.h>
 
+typedef long int int64_t
+
 int main(void)
 {	
 	float a, b, c, f1, f2;
