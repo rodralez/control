@@ -1,9 +1,16 @@
+% Version: 002
+% Date:    2020/03/02
+% Author:  Rodrigo Gonzalez <rodrigo.gonzalez@ingenieria.uncuyo.edu.ar>
+% URL:     https://github.com/rodralez/control 
+
 clear
 close all
 clc
 matlabrc
 
-t = 0:0.01:2;
+%% SIGNALS
+
+t = 0:0.01:2; 	% vector time
 
 signal_1 = sin(2* pi* 1 * t);
 
@@ -19,7 +26,7 @@ font_title = 45;
 
 line_wd = 2.5;
 
-%% GLAD
+%% FIGURE
 
 figure;
 
@@ -48,5 +55,7 @@ set(yl,'FontSize', font_label);
 % Hacer full screen de la figura antes de guardarla
 set(gcf, 'Units', 'Normalized', 'OuterPosition', [0 0 1 1]);
 saveas(gcf,'aceleraciones.png')
+
+%% SAVE
 
 % print (fig, 'acc_rmse', '-dpng',  '-bestfit')
