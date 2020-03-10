@@ -7,20 +7,12 @@
 
 int32_t fp2fx (float_t a, int32_t n)
 {
-	int32_t X;
 	
-	X = (int32_t) ( a * (1 << n) );
-	
-	return X;	
 }
 
 float_t fx2fp (int32_t X, int32_t n)
 {
-	float_t x;
 	
-	x = (float_t) X / (1 << n) ;
-	
-	return x;	
 }
 
 void main(void)
