@@ -15,9 +15,10 @@ float_t fx2fp (int32_t X, int32_t n)
 	
 }
 
-void main(void)
+int main(void)
 {	
 	float_t a, b;
+	double c;
 	int32_t X;
 	
 	a = 2.4515;
@@ -25,7 +26,10 @@ void main(void)
 	b = fx2fp(X, FRACTION_BITS);
 		 
 	printf("a = %f \n", a );
+	printf("c = %f \n", c );
 	printf("X = %d \n", X );
 	printf("b = %f \n", b );
 	printf("diff = %f \n", a - b );
+	
+	return 0;
 }
