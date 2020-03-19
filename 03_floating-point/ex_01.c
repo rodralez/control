@@ -1,3 +1,7 @@
+// Version: 001
+// Date:    2020/03/19
+// Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
+
 #include <stdio.h>
 #include <float.h>
 #include <math.h>

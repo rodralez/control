@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <limits.h>
 
 int main(void)
 {	
@@ -19,6 +20,9 @@ int main(void)
 	printf("d = %d \n", d );
 	printf("s1 = %d \n", s1 );
 	printf("s2 = %d \n", s2 );
+	
+	printf("%d \n" , INT_MAX);
+	printf("%d \n" , INT_MIN);
 	
 	return 0;
 }

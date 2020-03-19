@@ -1,3 +1,7 @@
+// Version: 001
+// Date:    2020/03/19
+// Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
+
 #include <stdio.h>
 #include <float.h>
 #include <math.h>
@@ -8,6 +12,7 @@
 #define _ISOC99_SOURCE
 #include <fenv.h>
 
+// Compile usando el siguiente comando
 // compile: gcc -Wall -O3 -std=c99 ex_05.c -o ex_05 -lm -march=corei7 -frounding-math -fsignaling-nans
     
 void fpe_handler(int sig){
