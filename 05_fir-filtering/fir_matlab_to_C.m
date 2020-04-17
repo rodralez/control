@@ -22,7 +22,7 @@ Fs = 10000;  % Sampling frequency
 dt = 1/Fs;
 t = (0:dt:dt*2000)';
 
-signal = sin(2 * pi * Fn1 * t) + sin(2 * pi * Fn2 * t) + 0.5 * sin(2 * pi * Fn3 * t);
+signal = sin(2 * pi * Fn1 * t) + sin(2 * pi * Fn2 * t) + 0.10 * sin(2 * pi * Fn3 * t);
 
 %% MATLAB-to-C, SINGLE PRECISION
 

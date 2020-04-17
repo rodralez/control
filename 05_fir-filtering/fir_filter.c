@@ -6,7 +6,8 @@
 void fir_filter_float(float *input, uint32_t N, float *output)
 {
 	uint32_t i, j;
-	float acc;
+	
+    float acc;
 	
 	for (i=0; i < N; i++)
 	{
