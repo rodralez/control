@@ -46,8 +46,8 @@ legend('FILTERED SIGNAL')
 
 %% PLOT IN FREQ
 
-[~, f1, ~, ~, H_signal_f, ~, ~] = my_dft(signal_f, Fs);
-[~, f2, ~, ~, H_output_c, ~, ~] = my_dft(output_c, Fs);
+[f1, H_signal_f, ~, ~, ~] = my_dft(signal_f, Fs);
+[f2, H_output_c, ~, ~, ~] = my_dft(output_c, Fs);
 
 figure
 subplot(2,1,1)
