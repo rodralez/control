@@ -1,7 +1,6 @@
 %---------------------------------------------------
 % Vehicle steering 
 % Pole placement design
-%
 
 clc
 clear
@@ -29,7 +28,6 @@ D = 0;
 %---------------------------------------------------
 
 zeta=1;
-
 wn=4;
 
 K = [b*wn^2/v0^2 (2*zeta*wn*b/v0-a*b*wn^2/v0^2)];
@@ -56,19 +54,21 @@ end
 
 A1 = A - (B * K);
 
-clp = eig(A1)
+poles = eig(A1)
 
 %---------------------------------------------------
 % Simulink, Step response
 %---------------------------------------------------
 
-% Chance matrices C and D for Simulink
+% Change matrices C and D for Simulink
+
 C=eye(2);
 D=[0 0]';
 
-time = 0:0.1:30;
+TStart = 0;
+TFinal = 30;
 
-sim('VehicleSteering_sim.slx', time)
+time = sim('VehicleSteering_sim.slx', [TStart TFinal] );
 
 %---------------------------------------------------
 % Plot
@@ -80,8 +80,9 @@ title ('Control signal')
 grid on
 
 figure
-plot (time, x1.signals(1).values)
+plot (time, x1.signals(1).values, '--')
 hold on
 plot (time, x1.signals(2).values)
 title ('Lateral position')
 grid on
+legend('Reference', 'Lateral position')
