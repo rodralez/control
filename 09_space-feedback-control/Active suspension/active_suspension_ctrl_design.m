@@ -20,10 +20,10 @@ tau = 0.001;                      % Actuator time constant [s]
 % A, B, C, and H matrices
 %---------------------------------------------------
 
-% A = ;
-% B = ;  
-% C = ;
-% H = ;  
+A=[[0 1 0 0 0];[-(cw+cs)/mw -ds/mw cs/mw ds/mw -1/mw];[0 0 0 1 0];[cs/mc ds/mc -cs/mc -ds/mc 1/mc];[0 0 0 0 -1/tau]];
+B=[0 0 0 0 1/tau]';
+H=[0 cw/mw 0 0 0]';
+C=[[-1 0 1 0 0];[cs/mc ds/mc -cs/mc -ds/mc 1/mc]]; 
 
 %---------------------------------------------------
 % Enter your control design here
