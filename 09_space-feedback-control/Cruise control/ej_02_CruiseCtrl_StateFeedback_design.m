@@ -105,12 +105,12 @@ poles = eig(A1)
 
 B1=[B H];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
 C1=eye(2);                  % Output all state variables from the model
-D1=zeros(2);              % Corresponding D matrix
+D1=zeros(2);                % Corresponding D matrix
 
 TStart = 0;
 TFinal = 100;
 
-tout = sim('CruiseCtrl_StateFeedback_Int.slx', [TStart TFinal] );
+time = sim('CruiseCtrl_StateFeedback_Int.slx', [TStart TFinal] );
 
 figure
 plot(velocity.time, velocity.signals.values)
@@ -119,12 +119,8 @@ title ("VELOCITY")
 
 figure
 plot(control.time, control.signals.values)
-% hold on
-% plot(control_3p.time, control_3p.signals.values, '--')
 grid on
 title ("CONTROL ACTION")
-% legend('6p', '3p')
 
-% control_3p = control;
-% 
-% save control_3p control_3p
+save_system('CruiseCtrl_StateFeedback_Int.slx', 'CruiseCtrl_StateFeedback_Int.mdl', 'ExportToVersion', 'R2014A_MDL')
+

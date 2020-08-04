@@ -76,8 +76,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "rodralez"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 07 13:20:19 2020"
-  RTWModifiedTimeStamp	  516028819
+  LastModifiedDate	  "Wed Jul 08 18:21:36 2020"
+  RTWModifiedTimeStamp	  516133296
   ModelVersionFormat	  "1.%<AutoIncrement:15>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off

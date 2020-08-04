@@ -90,3 +90,6 @@ plot(velocity.time, velocity.signals.values)
 grid on
 title ("VELOCITY")
 
+save_system('CruiseCtrl_StateFeedback.slx', 'CruiseCtrl_StateFeedback.mdl', 'ExportToVersion', 'R2014A_MDL')
+
+
