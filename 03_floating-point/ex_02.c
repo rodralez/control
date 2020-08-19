@@ -49,7 +49,7 @@ int main(void)
 	printf("FLT_EPSILON	= %E \n", 	FLT_EPSILON ); // En MATLAB: eps(single(1))
 	printf("\n");
 	
-		printf("** Floating-point double-precision constants ** \n");
+	printf("** Floating-point double-precision constants ** \n");
 	printf("DBL_MIN 	= %E \n", 		DBL_MIN );
 	printf("DBL_MAX 	= %E \n", 		DBL_MAX );
 	printf("DBL_EPSILON	= %E \n", 	DBL_EPSILON ); // En MATLAB: eps(1)

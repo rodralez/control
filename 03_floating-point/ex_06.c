@@ -17,54 +17,54 @@
     
 void fpe_handler(int sig){
 	
-	if (sig != SIGFPE)
-		return;
+  if (sig != SIGFPE)
+    return;
 	
-	printf ("UPS! Floating Point Exception \n");
+  printf ("UPS! Floating Point Exception \n");
 
-	if(fetestexcept(FE_INVALID)) printf("FE_INVALID\n");
-	if(fetestexcept(FE_INEXACT)) printf("FE_INEXACT\n");
-	if(fetestexcept(FE_DIVBYZERO)) printf("FE_DIVBYZERO\n");
-	if(fetestexcept(FE_OVERFLOW)) printf("FE_OVERFLOW\n");
-	if(fetestexcept(FE_UNDERFLOW)) printf("FE_UNDERFLOW\n");
-	if(fetestexcept(FE_ALL_EXCEPT) == 0) printf("None exceptions\n");
+  if(fetestexcept(FE_INVALID)) printf("FE_INVALID\n");
+  if(fetestexcept(FE_INEXACT)) printf("FE_INEXACT\n");
+  if(fetestexcept(FE_DIVBYZERO)) printf("FE_DIVBYZERO\n");
+  if(fetestexcept(FE_OVERFLOW)) printf("FE_OVERFLOW\n");
+  if(fetestexcept(FE_UNDERFLOW)) printf("FE_UNDERFLOW\n");
+  if(fetestexcept(FE_ALL_EXCEPT) == 0) printf("None exceptions\n");
 		
-	exit(EXIT_FAILURE);
+  exit(EXIT_FAILURE);
 }
 
 int main(void)
 {	
-	int ROUND_MODE;
+  int ROUND_MODE;
 	
-	feclearexcept (FE_ALL_EXCEPT);
+  feclearexcept (FE_ALL_EXCEPT);
 	
-	// signal(SIGFPE, fpe_handler);
-
-	// feenableexcept(FE_INVALID   | 
+  // signal(SIGFPE, fpe_handler);
+  
+  // feenableexcept(FE_INVALID   | 
 		   // FE_INEXACT   | 
                    // FE_DIVBYZERO | 
                    // FE_OVERFLOW  | 
                    // FE_UNDERFLOW);
 	                 
-    ROUND_MODE = fegetround();		
-    printf("Current Round Mode = %d \n", ROUND_MODE );
+  ROUND_MODE = fegetround();		
+  printf("Current Round Mode = %d \n", ROUND_MODE );
 		
-    /* Temporarily raise other exceptions. */
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_INEXACT);
+  /* Temporarily raise other exceptions. */
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_INEXACT);
     
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_INVALID);
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_INVALID);
 
-    feclearexcept(FE_ALL_EXCEPT);    
-    feraiseexcept(FE_DIVBYZERO);
+  feclearexcept(FE_ALL_EXCEPT);    
+  feraiseexcept(FE_DIVBYZERO);
 
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_OVERFLOW);
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_OVERFLOW);
 
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_UNDERFLOW);
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_UNDERFLOW);
 
-	return 0;
+  return 0;
 	
 }

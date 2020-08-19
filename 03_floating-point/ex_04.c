@@ -49,28 +49,28 @@ int main(void)
 	ROUND_MODE = fegetround();		
 	printf("Current Round Mode = %d \n", ROUND_MODE );
 		
-    show_fe_exceptions();
+  show_fe_exceptions();
       
-    /* Temporarily raise other exceptions */
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_INEXACT);
-    show_fe_exceptions();
+  /* Temporarily raise other exceptions */
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_INEXACT);
+  show_fe_exceptions();
     
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_INVALID);
-    show_fe_exceptions();
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_INVALID);
+  show_fe_exceptions();
 
-    feclearexcept(FE_ALL_EXCEPT);    
-    feraiseexcept(FE_DIVBYZERO);
-    show_fe_exceptions();
+  feclearexcept(FE_ALL_EXCEPT);    
+  feraiseexcept(FE_DIVBYZERO);
+  show_fe_exceptions();
 
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_OVERFLOW);
-    show_fe_exceptions();
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_OVERFLOW);
+  show_fe_exceptions();
 
-    feclearexcept(FE_ALL_EXCEPT);
-    feraiseexcept(FE_UNDERFLOW);
-    show_fe_exceptions();
+  feclearexcept(FE_ALL_EXCEPT);
+  feraiseexcept(FE_UNDERFLOW);
+  show_fe_exceptions();
 
 	return 0;	
 }
