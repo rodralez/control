@@ -28,7 +28,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [153.0, 103.0, 1420.0, 744.0]
+      Location		      [56.0, 29.0, 1544.0, 871.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,9 +52,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1187.0, 503.0]
-	ZoomFactor		[1.25]
-	Offset			[74.595535714285631, 46.64572172618989]
+	Extents			[1311.0, 630.0]
+	ZoomFactor		[1.0]
+	Offset			[-45.71875, 9.6933407738089272]
       }
     }
   }
@@ -64,8 +64,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "rodralez"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 07 13:26:20 2020"
-  RTWModifiedTimeStamp	  516029180
+  LastModifiedDate	  "Thu Aug 27 11:20:24 2020"
+  RTWModifiedTimeStamp	  520428024
   ModelVersionFormat	  "1.%<AutoIncrement:10>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -823,7 +823,7 @@ Model {
   }
   System {
     Name		    "active_suspension_sim"
-    Location		    [153, 103, 1573, 847]
+    Location		    [56, 29, 1600, 900]
     Open		    off
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -835,7 +835,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "29"
     Block {
@@ -859,7 +859,7 @@ Model {
       Name		      "Acceleration"
       SID		      "9"
       Ports		      [1]
-      Position		      [825, 174, 855, 206]
+      Position		      [875, 174, 905, 206]
       ZOrder		      9
       NumInputPorts	      "1"
       Floating		      off
@@ -871,8 +871,8 @@ Model {
       MaxDataPoints	      5000
       SaveToWorkspace	      off
       SaveName		      ScopeData
-      YMin		      0.00015
-      YMax		      0.00196
+      YMin		      -0.68785
+      YMax		      6.19062
       SampleInput	      off
       SampleTime	      -1
       ZoomMode		      on
@@ -893,7 +893,7 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [558 157 1601 899]
+      Location		      [810 231 1843 980]
     }
     Block {
       BlockType		      StateSpace
@@ -953,7 +953,7 @@ Model {
       Name		      "Demux"
       SID		      "4"
       Ports		      [1, 2]
-      Position		      [620, 70, 630, 230]
+      Position		      [630, 70, 640, 230]
       ZOrder		      4
       ShowName		      off
       Outputs		      "2"
@@ -963,11 +963,11 @@ Model {
       Name		      "Displacement"
       SID		      "2"
       Ports		      [1]
-      Position		      [825, 94, 855, 126]
+      Position		      [875, 94, 905, 126]
       ZOrder		      2
       NumInputPorts	      "1"
       Floating		      off
-      Open		      on
+      Open		      off
       TimeRange		      auto
       TickLabels	      OneTimeTick
       ShowLegends	      off
@@ -997,7 +997,7 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [57 125 1601 899]
+      Location		      [66 78 1921 1079]
     }
     Block {
       BlockType		      Gain
@@ -1014,7 +1014,7 @@ Model {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace"
       SID		      "24"
-      Position		      [140, 148, 205, 172]
+      Position		      [85, 148, 150, 172]
       ZOrder		      24
       VariableName	      "roaddist"
     }
@@ -1033,7 +1033,7 @@ Model {
       BlockType		      Gain
       Name		      "Output signal"
       SID		      "18"
-      Position		      [550, 135, 580, 165]
+      Position		      [530, 135, 560, 165]
       ZOrder		      18
       NamePlacement	      "alternate"
       Gain		      "C"
@@ -1044,7 +1044,7 @@ Model {
       Name		      "Road disturbance monitor"
       SID		      "20"
       Ports		      [1]
-      Position		      [385, 319, 415, 351]
+      Position		      [360, 279, 390, 311]
       ZOrder		      20
       NumInputPorts	      "1"
       Floating		      off
@@ -1146,10 +1146,10 @@ Model {
       ZOrder		      61
       SrcBlock		      "From\nWorkspace"
       SrcPort		      1
-      Points		      [31, 0]
+      Points		      [86, 0]
       Branch {
 	ZOrder			56
-	Points			[0, 175]
+	Points			[0, 135]
 	DstBlock		"Road disturbance monitor"
 	DstPort			1
       }

@@ -13,12 +13,12 @@
 #include <fenv.h>
 
 // Compile usando el siguiente comando
-// compile: gcc -Wall -O3 -std=c99 ex_05.c -o ex_05 -lm -march=corei7 -frounding-math -fsignaling-nans
+// compile: gcc -Wall -O3 -std=c99 ex_06.c -o ex_06 -lm -march=corei7 -frounding-math -fsignaling-nans
     
 void fpe_handler(int sig){
 	
-  if (sig != SIGFPE)
-    return;
+  //~ if (sig != SIGFPE)
+    //~ return;
 	
   printf ("UPS! Floating Point Exception \n");
 
@@ -38,20 +38,24 @@ int main(void)
 	
   feclearexcept (FE_ALL_EXCEPT);
 	
-  // signal(SIGFPE, fpe_handler);
+  signal(SIGFPE, fpe_handler);
   
-  // feenableexcept(FE_INVALID   | 
-		   // FE_INEXACT   | 
-                   // FE_DIVBYZERO | 
-                   // FE_OVERFLOW  | 
-                   // FE_UNDERFLOW);
+  feenableexcept(FE_INVALID   | 
+                 FE_INEXACT   | 
+                 FE_DIVBYZERO | 
+                 FE_OVERFLOW  | 
+                 FE_UNDERFLOW);
 	                 
   ROUND_MODE = fegetround();		
   printf("Current Round Mode = %d \n", ROUND_MODE );
 		
   /* Temporarily raise other exceptions. */
-  feclearexcept(FE_ALL_EXCEPT);
+  //~ feclearexcept(FE_ALL_EXCEPT);
+  printf("point 1");
+  
   feraiseexcept(FE_INEXACT);
+  printf("point 2");
+  
     
   feclearexcept(FE_ALL_EXCEPT);
   feraiseexcept(FE_INVALID);
