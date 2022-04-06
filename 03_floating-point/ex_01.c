@@ -1,6 +1,9 @@
-// Version: 001
-// Date:    2020/03/19
+// Version: 002
+// Date:    2022/04/05
 // Author:  Rodrigo Gonzalez <rodralez@frm.utn.edu.ar>
+
+// Compile usando el siguiente comando
+// compile: gcc -Wall -std=c99 ex_01.c -o ex_01
 
 #include <stdio.h>
 #include <float.h>
@@ -37,7 +40,7 @@ int main(void)
 	for (int64_t i = 0; i < 10000000; i++){ acum_1 += 0.01; } 
 
 	acum_2 = 0.0;
-	b = 0.01;
+	b = 0.333;
 	for (int64_t i = 0; i < 10000000; i++){ acum_2 += b / b; }
 	
 	printf("acum_1 = %f \n", acum_1 );

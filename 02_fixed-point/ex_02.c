@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdint.h>
 
+// Para usar la biblioteca <math.h>, compilar con "-lm", por ejemplo:
+// gcc ex_02.c -o ex_02 -lm
+
 #define FRACTION_BITS 8
 
 int32_t fp2fx (float_t a, int32_t n)
