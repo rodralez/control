@@ -13,7 +13,7 @@
 #include <stdlib.h>
 
 // Compile usando el siguiente comando
-// compile: gcc -Wall -std=c99 ex_06.c -o ex_06 -lm -frounding-math -fsignaling-nans -DLINUX
+// compile: gcc -Wall -std=c99 ex_05.c -o ex_05 -lm -frounding-math -fsignaling-nans -DLINUX
 
 // Variables globales
 fexcept_t excepts;
