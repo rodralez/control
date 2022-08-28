@@ -7,3 +7,4 @@
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=tj8w-GYj8mU)
 
+[![Video en Youtube](https://img.youtube.com/vi/tj8w-GYj8mU/0.jpg)](https://www.youtube.com/watch?v=tj8w-GYj8mU "Representación finita de números reales en formato punto fijo")
